@@ -1,0 +1,106 @@
+.p-title.title-first {
+    margin: 0 0 15px;
+    font-size: 24px;
+    padding: 0;
+}
+
+.row.icon-layanan {
+	margin: 10px;
+}
+
+.row.icon-layanan .icon-box {
+	padding: 20px;
+	position: relative;
+}
+
+.row.icon-layanan.ods {
+    background: beige;
+}
+
+.row.icon-layanan.even {
+	background: #FAFCFE;
+}
+
+.vrtl-box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.vrtl-box:hover {
+	background: white;
+	border: solid 3px #dce4e8;
+	background: transparent;
+}
+
+.row.icon-layanan .icon-box:hover {
+	background: white;
+	cursor: pointer;
+}
+
+.row.icon-layanan .icon-box:hover .glyph-icon.hvr-1 {
+	display: none;
+}
+
+.row.icon-layanan .icon-box:hover .glyph-icon.hvr-2 {
+	display: block;
+}
+
+.icon-box .glyph-icon.hvr-2 {
+	display: none;
+}
+
+.icon-box .glyph-icon.sub {
+	margin: 0 auto 10px;
+}
+
+.popover {
+	min-width: 450px;
+}
+
+.popover-content .row {
+	margin-bottom: 10px;
+}
+
+.icon-layanan.ods .icon-box.even {
+    background: #FAFCFE;
+}
+
+.icon-layanan.even .icon-box.even {
+    background: beige;
+}
+
+.box {
+	padding: 10px;
+    border: solid #999;
+}
+
+.box.lay {
+    color: white;
+    font-weight: bold;
+    background: #666;
+    border-radius: 5px;
+}
+
+.p-title.title-first {
+	margin: 50px 0;
+}
+
+.p-title.title-first.frs {
+	margin-top: 25px;
+}
+
+.box {
+	margin:10px;
+	background:#fff;
+}
+
+.icon-box .icon-title {
+	font-size: 14px;
+}
+
+.icon-box .row {
+	margin-bottom: 20px;
+}

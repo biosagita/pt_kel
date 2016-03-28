@@ -1,0 +1,9 @@
+.report {text-align:center;margin-top:20px;}
+.report p{background-color: mediumseagreen;padding: 10px;font-weight: bold;color: #fff;font-size: 20px;}
+.report p.grade{background-color: indianred;font-size: 12px;}
+.report table>tbody>tr>td, .report table>thead>tr>th{vertical-align: middle;text-align: center;}
+.report table{font-size: 12px;}
+.report table>thead>tr>th{font-size: 10px;}
+.report table>thead.gray{background-color: gray;color: white;}
+.report table>tbody>tr.jumlah{font-weight: bold;background-color: lightgray;}
+.report table>tbody>tr.jumlah>td{padding: 10px;}
