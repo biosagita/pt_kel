@@ -3,6 +3,17 @@
         <h3 class="title-hero text-center">
             Daftar Tamu
         </h3>
+        <form method="post" class="form-horizontal bordered-row" action="<?php echo site_url('daftar-tamu/lists'); ?>">
+            <div class="form-group row" style="margin-bottom:20px;">
+                <label class="col-sm-3 control-label">Periode</label>
+                <div class="col-sm-6">
+                    <input class="form-control" name="periode" id="daterangepicker-example" value="<?php echo $periode; ?>" />
+                </div>
+                <div class="col-sm-3">
+                    <input type="submit" class="btn btn-success" value="Process" />
+                </div>
+            </div>
+        </form>
         <?php if(count($daftartamu) > 0): ?>
         <div class="example-box-wrapper">
             <table id="datatable-tabletools" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -11,9 +22,9 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Instansi</th>
-                        <th>Alamat</th>
                         <th>No. HP</th>
                         <th>Layanan</th>
+                        <th>Tanggal</th>
                         <th>State</th>
                         <th>Status</th>
                     </tr>
@@ -26,9 +37,9 @@
                         <td><?php echo $cnt; ?></td>
                         <td><?php echo $value['dftm_nama']; ?></td>
                         <td><?php echo $value['dftm_instansi']; ?></td>
-                        <td><?php echo $value['dftm_alamat']; ?></td>
                         <td><?php echo $value['dftm_telp']; ?></td>
                         <td><a href="<?php echo $url_layanan; ?>"><?php echo (!empty($value['lyn_name']) ? $value['lyn_name'] : '-'); ?></a></td>
+                        <td><?php echo datetime_to_date($value['dftm_entrydate']); ?></td>
                         <td>
                             <?php 
                                 $next_action_url = '#';

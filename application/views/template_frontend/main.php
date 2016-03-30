@@ -169,6 +169,11 @@
     <script type="text/javascript" src="<?php echo $assets; ?>/js-core/modernizr.js"></script>
     <script type="text/javascript" src="<?php echo $assets; ?>/js-core/jquery-cookie.js"></script>
 
+<!--<link rel="stylesheet" type="text/css" href="<?php echo $assets; ?>/widgets/daterangepicker/daterangepicker.css">-->
+<script type="text/javascript" src="<?php echo $assets; ?>/widgets/daterangepicker/moment.js"></script>
+<script type="text/javascript" src="<?php echo $assets; ?>/widgets/daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="<?php echo $assets; ?>/widgets/daterangepicker/daterangepicker-demo.js"></script>
+
 <!-- Uniform -->
 
 <!--<link rel="stylesheet" type="text/css" href="<?php echo $assets; ?>/widgets/uniform/uniform.css">-->

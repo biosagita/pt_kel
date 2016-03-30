@@ -93,8 +93,20 @@ class Daftartamu extends MY_Frontend {
 	}
 
 	function lists() {
-		$this->_data['daftartamu'] = $this->frontendmodel->where('dftm_waiting != ' . LAYANAN_SKIP)->order_by('dftm_id', 'DESC')->get_daftartamu_layanan();
+		if(!empty($_POST['periode'])) {
+			$periode = !empty($_POST['periode']) ? $_POST['periode'] : '';
+			//echo $periode;
+			list($date1, $date2) = explode(' - ', $periode);
+
+			$this->_data['daftartamu'] = $this->frontendmodel->where('dftm_waiting != ' . LAYANAN_SKIP . ' AND (DATE_FORMAT(dftm_entrydate, "%Y-%m-%d") BETWEEN "'.$date1.'" AND "'.$date2.'")')->order_by('dftm_id', 'DESC')->get_daftartamu_layanan();
+			//echo $this->db->last_query(); exit();
+		} else {
+			$this->_data['daftartamu'] = $this->frontendmodel->where('dftm_waiting != ' . LAYANAN_SKIP)->order_by('dftm_id', 'DESC')->get_daftartamu_layanan();
+		}
+
+		
 		$url_formulirdaftartamu = site_url('daftar-tamu/form');
+		$this->_data['periode'] = !empty($periode) ? $periode : '';
 
 		$this->template->set('title', 'Layanan | Daftar Tamu');
 		$this->template->set('assets', $this->_data['assets']);

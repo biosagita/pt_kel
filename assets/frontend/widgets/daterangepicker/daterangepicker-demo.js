@@ -3,7 +3,9 @@
 $(function() {
     "use strict";
 
-    $('#daterangepicker-example').daterangepicker();
+    $('#daterangepicker-example').daterangepicker({
+        format: 'YYYY-MM-DD',
+    });
 
 });
 

@@ -111,6 +111,13 @@ function mysql_to_date($date, $delimiter='-') {
 	return $date;
 }
 
+function datetime_to_date($datetime, $delimiter=' ') {
+	if(empty($datetime)) return 0;
+	list($date, $time) = explode($delimiter, $datetime);
+	$new_date = mysql_to_date($date);
+	return $new_date;
+}
+
 function get_time_date_diff($date_start, $date_end) {
 	$date_start = date('Y-m-d', $date_start);
 	$date_end 	= date('Y-m-d', $date_end);
