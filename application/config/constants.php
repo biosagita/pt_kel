@@ -76,4 +76,4 @@ define('ID_LAYANAN_N_6', 62);
 
 define('ID_LAYANAN_KARTU_KUNING', 11);
 
-define('ID_LAYANAN_RETRIBUSI', 63);
+define('ID_LAYANAN_RETRIBUSI', 65);

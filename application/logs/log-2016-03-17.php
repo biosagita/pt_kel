@@ -1508,13 +1508,3 @@ ERROR - 2016-03-17 12:58:57 --> Severity: 8192  --> mysql_pconnect(): The mysql 
 ERROR - 2016-03-17 12:58:57 --> Severity: Notice  --> Undefined offset: 2 C:\xampp\htdocs\smart_ptsp\application\helpers\main_helper.php 109
 ERROR - 2016-03-17 12:58:57 --> Severity: Notice  --> Undefined offset: 1 C:\xampp\htdocs\smart_ptsp\application\helpers\main_helper.php 109
 ERROR - 2016-03-17 13:00:30 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\xampp\htdocs\smart_ptsp\system\database\drivers\mysql\mysql_driver.php 91
-ERROR - 2016-03-17 22:50:36 --> Severity: Notice  --> Undefined offset: 2 C:\xampp\htdocs\smart_ptsp\application\helpers\main_helper.php 109
-ERROR - 2016-03-17 22:50:36 --> Severity: Notice  --> Undefined offset: 1 C:\xampp\htdocs\smart_ptsp\application\helpers\main_helper.php 109
-ERROR - 2016-03-17 23:07:52 --> Severity: Notice  --> Undefined offset: 2 C:\xampp\htdocs\smart_ptsp\application\helpers\main_helper.php 109
-ERROR - 2016-03-17 23:07:52 --> Severity: Notice  --> Undefined offset: 1 C:\xampp\htdocs\smart_ptsp\application\helpers\main_helper.php 109
-ERROR - 2016-03-17 23:08:17 --> Severity: Notice  --> Undefined offset: 2 C:\xampp\htdocs\smart_ptsp\application\helpers\main_helper.php 109
-ERROR - 2016-03-17 23:08:17 --> Severity: Notice  --> Undefined offset: 1 C:\xampp\htdocs\smart_ptsp\application\helpers\main_helper.php 109
-ERROR - 2016-03-17 23:12:07 --> Severity: Notice  --> Undefined offset: 2 C:\xampp\htdocs\smart_ptsp\application\helpers\main_helper.php 109
-ERROR - 2016-03-17 23:12:07 --> Severity: Notice  --> Undefined offset: 1 C:\xampp\htdocs\smart_ptsp\application\helpers\main_helper.php 109
-ERROR - 2016-03-17 23:16:22 --> Severity: Notice  --> Undefined offset: 2 C:\xampp\htdocs\smart_ptsp\application\helpers\main_helper.php 109
-ERROR - 2016-03-17 23:16:22 --> Severity: Notice  --> Undefined offset: 1 C:\xampp\htdocs\smart_ptsp\application\helpers\main_helper.php 109

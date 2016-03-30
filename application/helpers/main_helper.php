@@ -290,3 +290,47 @@ function excel_datetime($datetime, $delimiter='-') {
 	$date = $day . '/' . $month . '/' . $year;
 	return $date;
 }
+
+function nama_kelurahan($id) {
+	$CI =& get_instance();
+	$CI->load->model('frontend_model', 'mdl');
+	$res = $CI->mdl->where('IDKelurahan = "' . $id . '"')->get_row_kelurahan();
+	$tmp = !empty($res['Nama']) ? $res['Nama'] : '-';
+	return $tmp;
+}
+
+function nama_kecamatan($id) {
+	$CI =& get_instance();
+	$CI->load->model('frontend_model', 'mdl');
+	$res = $CI->mdl->where('IDKecamatan = "' . $id . '"')->get_row_kecamatan();
+	$tmp = !empty($res['Nama']) ? $res['Nama'] : '-';
+	return $tmp;
+}
+
+function nama_kota($id) {
+	$CI =& get_instance();
+	$CI->load->model('frontend_model', 'mdl');
+	$res = $CI->mdl->where('IDKabupaten = "' . $id . '"')->get_row_Kabupaten();
+	$tmp = !empty($res['Nama']) ? $res['Nama'] : '-';
+	return $tmp;
+}
+
+function nama_provinsi($id) {
+	$CI =& get_instance();
+	$CI->load->model('frontend_model', 'mdl');
+	$res = $CI->mdl->where('IDProvinsi = "' . $id . '"')->get_row_provinsi();
+	$tmp = !empty($res['Nama']) ? $res['Nama'] : '-';
+	return $tmp;
+}
+
+
+
+
+
+
+function nama_bulan($val) {
+	$val = (int)$val;
+	$arr_month = array("", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+	$tmp = !empty($arr_month[$val]) ? $arr_month[$val] : '-';
+	return $tmp;
+}

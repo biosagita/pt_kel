@@ -59,6 +59,8 @@ if(!empty($layanan['tpsr_template'])) {
         'logo_template' => '<img alt="" src="'.site_url('assets/backstage/images/logo_report.png').'" style="height:105px; width:88px">',
         'logo_brcode' => '<img alt="" src="'.site_url('assets/backstage/images/brcode.png').'" style="height:30px; width:30px">',
         'logo_foto' => '<img alt="" src="'.site_url('assets/backstage/images/pasfoto.png').'" style="height:105px; width:88px">',
+	'logo_dki_warna' => '<img alt="" src="'.site_url('assets/backstage/images/logodkiwarna.png').'" style="height:105px; width:88px">',
+
 
         'warga_negara_pemohon' => $formisian['frm_warga_negara'],
         'bin_binti_pemohon' => $formisian['frm_bin_binti_pemohon'],
@@ -105,9 +107,9 @@ if(!empty($layanan['tpsr_template'])) {
         'tahun_penfor_smta_pemohon' => $formisian['frm_karkun_smta_tahun'],
         'penfor_sm_pemohon' => $formisian['frm_karkun_sm'],
         'tahun_penfor_sm_pemohon' => $formisian['frm_karkun_sm_tahun'],
-        'penfor_aktaii_pemohon' => $formisian['frm_karkun_akta2'],
+        'aktaii' => $formisian['frm_karkun_akta2'],
         'tahun_penfor_aktaii_pemohon' => $formisian['frm_karkun_akta2_tahun'],
-        'penfor_aktaiii_pemohon' => $formisian['frm_karkun_akta3'],
+        'aktaiii' => $formisian['frm_karkun_akta3'],
         'tahun_penfor_aktaiii_pemohon' => $formisian['frm_karkun_akta3_tahun'],
         'penfor_s_pemohon' => $formisian['frm_karkun_s'],
         'tahun_penfor_s_pemohon' => $formisian['frm_karkun_s_tahun'],
@@ -122,6 +124,19 @@ if(!empty($layanan['tpsr_template'])) {
         'tahun_keterampilan_tiga_pemohon' => (!empty($frm_karkun_keterampilan[2]['tahun']) ? $frm_karkun_keterampilan[2]['tahun'] : ''),
 
         'tanggal_terbit' => (!empty($formisian['frm_tanggal_dikeluarkan']) AND $formisian['frm_tanggal_dikeluarkan'] != '0000-00-00') ? mysql_to_date($formisian['frm_tanggal_dikeluarkan']) : '',
+	
+	'kelurahan' => nama_kelurahan($formisian['frm_kelurahan']),
+	'kecamatan' => nama_kecamatan($formisian['frm_kecamatan']),
+	'kabupaten' => nama_kota($formisian['frm_kota']),
+	'provinsi' => nama_provinsi($formisian['frm_provinsi']),
+	
+
+
+
+
+
+
+
     );
     $layanan['tpsr_template'] = parse_stringphp($layanan['tpsr_template'], $arr_data);
 

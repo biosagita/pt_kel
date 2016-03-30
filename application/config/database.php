@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = '';
+$db['default']['password'] = 'vertrigo';
 $db['default']['database'] = 'dbsmart_ptsp2';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = 'ily_';
