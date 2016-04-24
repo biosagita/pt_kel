@@ -696,6 +696,7 @@ class Layanan extends MY_Frontend {
 
 		$data = array(
 			'dftm_complete' => LAYANAN_COMPLETE,
+			'dftm_entry_complete' => date('Y-m-d H:i:s'),
 			'dftm_changeuser' => $this->session->userdata('login_username'),
 			'dftm_changedate' => date('Y-m-d H:i:s'),
 		);

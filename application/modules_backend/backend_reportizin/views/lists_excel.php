@@ -42,6 +42,9 @@
             <th>Modal Usaha (Kekayaan Bersih)*</th>
             <th>Nomor Izin (No. SK)*</th>
             <th>ODS (1/0)</th>
+            <?php if(!empty($show_waktu_finish)): ?>
+            <th>Waktu Finish</th>
+            <?php endif; ?>
         </tr>
     </thead>
     <tbody>
@@ -104,6 +107,9 @@
             <td>-</td>
             <td><?php echo (!empty($value['frm_no_surat_sertifikat']) ? $value['frm_no_surat_sertifikat'] : '-'); ?></td>
             <td><?php echo $detik_layanan; ?></td>
+            <?php if(!empty($show_waktu_finish)): ?>
+            <td><?php echo ((!empty($value['dftm_entry_complete']) AND $value['dftm_entry_complete'] != '0000-00-00 00:00:00') ? excel_datetime($value['dftm_entry_complete']) : '-'); ?></td>
+            <?php endif; ?>
         </tr>
         <?php $cnt++; endforeach; ?>
     </tbody>

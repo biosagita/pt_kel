@@ -92,6 +92,12 @@
                     "width": '150px',
                     "targets": 21
                 },
+                <?php if(!empty($show_waktu_finish)): ?>
+                {
+                    "width": '150px',
+                    "targets": 22
+                },
+                <?php endif; ?>
             ]
             /*
             dom: 'Bfrtip',
@@ -131,11 +137,14 @@
                 <form method="post" class="form-horizontal bordered-row" action="<?php echo site_url('backend_reportizin/reportizin'); ?>">
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Periode</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <input class="form-control" name="periode" id="daterangepicker-example" value="<?php echo $periode; ?>" />
                     </div>
+                    <div class="col-sm-2">
+                        <label class="checkbox-inline"><input name="show_waktu_finish" type="checkbox" value="1" <?php echo (!empty($show_waktu_finish) ? 'checked' : ''); ?>>Waktu Finish</label>
+                    </div>
                     <div class="col-sm-3">
-                        <input type="submit" class="btn btn-success" value="Process" /> <a class="btn btn-info mrg20B" href="<?php echo site_url('report-izin/excel/?periode='.str_replace(' - ', '_', $periode)); ?>">EXCEL</a>
+                        <input type="submit" class="btn btn-success" value="Process" /> <a class="btn btn-info mrg20B" href="<?php echo site_url('report-izin/excel/?periode='.str_replace(' - ', '_', $periode).'&show_waktu_finish='.(!empty($show_waktu_finish)? 1 : 0)); ?>">EXCEL</a>
                     </div>
                 </div>
                 </form>
@@ -173,6 +182,9 @@
                             <th>Modal Usaha (Kekayaan Bersih)*</th>
                             <th>Nomor Izin (No. SK)*</th>
                             <th>ODS (1/0)</th>
+                            <?php if(!empty($show_waktu_finish)): ?>
+                            <th>Waktu Finish</th>
+                            <?php endif; ?>
                         </tr>
                     </tr>
                     </thead>
@@ -236,6 +248,9 @@
                             <td>-</td>
                             <td><?php echo (!empty($value['frm_no_surat_sertifikat']) ? $value['frm_no_surat_sertifikat'] : '-'); ?></td>
                             <td><?php echo $detik_layanan; ?></td>
+                            <?php if(!empty($show_waktu_finish)): ?>
+                            <td><?php echo ((!empty($value['dftm_entry_complete']) AND $value['dftm_entry_complete'] != '0000-00-00 00:00:00') ? excel_datetime($value['dftm_entry_complete']) : '-'); ?></td>
+                            <?php endif; ?>
                         </tr>
                         <?php $cnt++; endforeach; ?>
                     </tbody>

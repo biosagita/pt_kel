@@ -35,7 +35,11 @@ class Reportizin extends MY_Admin {
 			list($date1, $date2) = explode(' - ', $periode);
 		}
 
-		$this->db->select('daftartamu.*, layanan.*, gly_name, bly_entryuser, bly_status, frm_no_surat_sertifikat, TIME_TO_SEC(IF(TIMEDIFF(dftm_entry_cetak,dftm_entry_daftartamu) > 0, TIMEDIFF(dftm_entry_cetak,dftm_entry_daftartamu), 0)) as detik_layanan', FALSE);
+		if(!empty($_POST['show_waktu_finish'])) {
+			$this->_data['show_waktu_finish'] = 1;
+		}
+
+		$this->db->select('daftartamu.*, layanan.*, gly_name, bly_entryuser, bly_status, frm_no_surat_sertifikat, TIME_TO_SEC(IF(TIMEDIFF(dftm_entry_cetak,dftm_entry_daftartamu) > 0, TIMEDIFF(dftm_entry_cetak,dftm_entry_daftartamu), 0)) as detik_layanan, dftm_entry_complete', FALSE);
 		$this->db->join('layanan', 'dftm_lyn_id = lyn_id');
 		$this->db->join('grouplayanan', 'lyn_gly_id = gly_id');
 		$this->db->join('berkaslayanan', 'dftm_id = bly_dftm_id', 'left');
@@ -54,7 +58,7 @@ class Reportizin extends MY_Admin {
 	}
 
 	function page_content_ajax() {
-		$this->db->select('daftartamu.*, layanan.*, gly_name, bly_entryuser, bly_status, frm_no_surat_sertifikat, TIME_TO_SEC(IF(TIMEDIFF(dftm_entry_cetak,dftm_entry_daftartamu) > 0, TIMEDIFF(dftm_entry_cetak,dftm_entry_daftartamu), 0)) as detik_layanan', FALSE);
+		$this->db->select('daftartamu.*, layanan.*, gly_name, bly_entryuser, bly_status, frm_no_surat_sertifikat, TIME_TO_SEC(IF(TIMEDIFF(dftm_entry_cetak,dftm_entry_daftartamu) > 0, TIMEDIFF(dftm_entry_cetak,dftm_entry_daftartamu), 0)) as detik_layanan, dftm_entry_complete', FALSE);
 		$this->db->join('layanan', 'dftm_lyn_id = lyn_id');
 		$this->db->join('grouplayanan', 'lyn_gly_id = gly_id');
 		$this->db->join('berkaslayanan', 'dftm_id = bly_dftm_id', 'left');
@@ -72,7 +76,11 @@ class Reportizin extends MY_Admin {
 			list($date1, $date2) = explode('_', $periode);
 		}
 
-		$this->db->select('daftartamu.*, layanan.*, gly_name, bly_entryuser, bly_status, frm_no_surat_sertifikat, TIME_TO_SEC(IF(TIMEDIFF(dftm_entry_cetak,dftm_entry_daftartamu) > 0, TIMEDIFF(dftm_entry_cetak,dftm_entry_daftartamu), 0)) as detik_layanan', FALSE);
+		if(!empty($_GET['show_waktu_finish'])) {
+			$this->_data['show_waktu_finish'] = 1;
+		}
+
+		$this->db->select('daftartamu.*, layanan.*, gly_name, bly_entryuser, bly_status, frm_no_surat_sertifikat, TIME_TO_SEC(IF(TIMEDIFF(dftm_entry_cetak,dftm_entry_daftartamu) > 0, TIMEDIFF(dftm_entry_cetak,dftm_entry_daftartamu), 0)) as detik_layanan, dftm_entry_complete', FALSE);
 		$this->db->join('layanan', 'dftm_lyn_id = lyn_id');
 		$this->db->join('grouplayanan', 'lyn_gly_id = gly_id');
 		$this->db->join('berkaslayanan', 'dftm_id = bly_dftm_id', 'left');
