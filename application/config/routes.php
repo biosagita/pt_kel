@@ -79,6 +79,7 @@ $route['berkas-layanan/reject/(:any)'] = "frontend_layanan/layanan/reject/$1";
 $route['berkas-layanan/unapproved/(:any)'] = "frontend_layanan/layanan/unapproved/$1";
 $route['berkas-layanan/sertifikat/(:any)'] = "frontend_layanan/layanan/sertifikat/$1";
 $route['berkas-layanan/finish/(:any)'] = "frontend_layanan/layanan/finish/$1";
+$route['berkas-layanan/delete/(:any)'] = "frontend_layanan/layanan/delete/$1";
 
 $route['list-berkas-layanan/(:any)'] = "frontend_layanan/layanan/listberkaslayanan/$1";
 

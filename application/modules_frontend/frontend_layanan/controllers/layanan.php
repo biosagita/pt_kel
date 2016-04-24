@@ -728,6 +728,32 @@ class Layanan extends MY_Frontend {
 		$res = $this->load->view('option_wilayah/kelurahan', $this->_data, TRUE);
 		echo $res;
 	}
+
+	function delete($id) {
+		$rfr = $_SERVER['HTTP_REFERER'];
+		if(!empty($id)) {
+			$data_berkaslayanan = $this->frontendmodel->where(array('bly_id' => $id))->get_row_berkaslayanan();
+			$dftm_id = $data_berkaslayanan['bly_dftm_id'];
+
+			$data = array(
+				'dftm_status' => STATUS_DAFTARTAMU,
+				'dftm_waiting' => '',
+				'dftm_complete' => '',
+				'dftm_entry_berkas' => '',
+				'dftm_entry_formisian' => '',
+				'dftm_entry_approval' => '',
+				'dftm_entry_cetak' => '',
+				'dftm_changeuser' => $this->session->userdata('login_username'),
+				'dftm_changedate' => date('Y-m-d H:i:s'),
+			);
+			$res = $this->frontendmodel->where('dftm_id = ' . $dftm_id)->puts_daftartamu($data);
+
+			$this->frontendmodel->delete_formisian(array('frm_bly_id' => $id));
+			$this->frontendmodel->delete_berkaslayanan(array('bly_id' => $id));
+		}
+		redirect($rfr);
+		exit();
+	}
 }
 
 ?>

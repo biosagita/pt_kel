@@ -66,6 +66,8 @@
                             <a class="btn btn-default" href="<?php echo site_url('berkas-layanan/finish/' . $value['bly_id']); ?>" style="min-width:40px;" <?php echo (!empty($value['dftm_complete']) ? 'disabled' : ''); ?>>Finish</a>
                             <?php endif; ?>
 
+                            <a class="btn btn-danger" href="<?php echo site_url('berkas-layanan/delete/' . $value['bly_id']); ?>" style="min-width:40px;">DELETE</a>
+
                         </td>
                     </tr>
                     <?php $cnt++; ?>
