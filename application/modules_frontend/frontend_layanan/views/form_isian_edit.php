@@ -106,7 +106,7 @@
     <div class="col-md-12">
         <div class="form-group text-center">
             <button type="submit" class="btn btn-blue-alt btn-lg">Update Data</button>
-            <a href="<?php echo $url_listberkaslayanan; ?>" type="button" class="btn btn-default btn-lg">Batal</button>
+            <a href="<?php echo $url_listberkaslayanan; ?>" type="button" class="btn btn-default btn-lg">Batal</a>
         </div>
     </div>
 </div>
