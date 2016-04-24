@@ -49,12 +49,21 @@ class daftartamu extends MY_Admin {
 				'no_order'				=> 3,
 			),
 			array(
+				'title_header_column' 	=> 'Tanggal',
+				'field_name' 			=> $this->_table_field_pref . 'entrydate',
+				'result_format'			=> function( $d, $row ) {
+						list($date, $time) = explode(' ', $d);
+			            return $date;
+			        },
+				'no_order'				=> 4,
+			),
+			array(
 				'title_header_column' 	=> 'Action',
 				'field_name' 			=> $this->_table_field_pref . 'id',
 				'result_format'			=> function( $d, $row ) {
 			            return '<a onclick="doFormEdit('.$d.');return false;" href="#" class="btn btn-xs btn-success">EDIT</a> <a onclick="showModalBoxDelete('.$d.');return false;" href="#" class="btn btn-xs btn-danger">DELETE</a>';
 			        },
-			    'no_order'				=> 4,
+			    'no_order'				=> 5,
 			),
 		);
 
