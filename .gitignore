@@ -1,2 +1,2 @@
-#config database
+#config db
 application/config/database.php
